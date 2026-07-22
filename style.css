@@ -1,8 +1,16 @@
+/* =========================
+   Global
+========================= */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -11,11 +19,25 @@ body{
     line-height: 1.6;
 }
 
+/* =========================
+   Header
+========================= */
+
 header{
     text-align: center;
-    padding: 60px 20px;
+    padding: 70px 20px;
     background: linear-gradient(90deg, #2563eb, #06b6d4);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,.4);
+}
+
+.profile-img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,.3);
 }
 
 header h1{
@@ -25,18 +47,49 @@ header h1{
 
 header p{
     font-size: 1.2rem;
+    color: #f1f5f9;
 }
+
+/* =========================
+   Navigation
+========================= */
+
+nav{
+    position: sticky;
+    top: 0;
+    background: rgba(15,23,42,.95);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+    z-index: 999;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover{
+    color: #38bdf8;
+}
+
+/* =========================
+   Section
+========================= */
 
 section{
     width: 85%;
     max-width: 1000px;
     margin: 30px auto;
-    padding: 25px;
-    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    background: rgba(255,255,255,.05);
     border-radius: 15px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: 0.3s;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,.3);
+    transition: .3s;
 }
 
 section:hover{
@@ -45,10 +98,14 @@ section:hover{
 
 h2{
     color: #38bdf8;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-left: 5px solid #38bdf8;
     padding-left: 10px;
 }
+
+/* =========================
+   List
+========================= */
 
 ul{
     margin-left: 25px;
@@ -58,10 +115,56 @@ li{
     margin-bottom: 10px;
 }
 
+/* =========================
+   Skill Badge
+========================= */
+
+.skill{
+    display: inline-block;
+    background: #2563eb;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin: 6px;
+    font-size: .95rem;
+    transition: .3s;
+}
+
+.skill:hover{
+    background: #38bdf8;
+    transform: scale(1.05);
+}
+
+/* =========================
+   Project Card
+========================= */
+
+.project{
+    background: rgba(255,255,255,.05);
+    border-left: 5px solid #38bdf8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.project:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,.4);
+}
+
+.project h3{
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   Table
+========================= */
+
 table{
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 table th{
@@ -73,20 +176,58 @@ table th{
 table td{
     padding: 12px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,.2);
 }
 
 table tr:nth-child(even){
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,.05);
 }
 
 table tr:hover{
-    background: rgba(56,189,248,0.2);
+    background: rgba(56,189,248,.2);
 }
+
+/* =========================
+   Button
+========================= */
+
+.btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #38bdf8;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover{
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+/* =========================
+   Contact
+========================= */
+
+.contact a{
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.contact a:hover{
+    text-decoration: underline;
+}
+
+/* =========================
+   Footer
+========================= */
 
 footer{
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     margin-top: 40px;
     background: #0f172a;
     border-top: 2px solid #38bdf8;
@@ -96,22 +237,45 @@ footer p{
     color: #cbd5e1;
 }
 
-/* Responsive */
-@media (max-width: 768px){
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width:768px){
+
+    header{
+        padding:50px 20px;
+    }
+
+    .profile-img{
+        width:140px;
+        height:140px;
+    }
 
     header h1{
-        font-size: 2rem;
+        font-size:2rem;
     }
 
     header p{
-        font-size: 1rem;
+        font-size:1rem;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:8px;
     }
 
     section{
-        width: 95%;
+        width:95%;
+        padding:20px;
     }
 
     table{
-        font-size: 0.8rem;
+        font-size:.85rem;
+    }
+
+    .skill{
+        display:block;
+        text-align:center;
     }
 }
